@@ -64,12 +64,7 @@ class _IndexPageState extends State<IndexPage> {
                     color: Colors.black,
                   )),
             ],
-            title: Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(image: AssetImage("group2_blue.png"),
-                  ),
-                )
-            ),
+            title: Image.asset("images/group2_blue.png", scale: 1.3,)
           ),
         ),
       ),

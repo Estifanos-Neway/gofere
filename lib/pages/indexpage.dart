@@ -64,15 +64,11 @@ class _IndexPageState extends State<IndexPage> {
                     color: Colors.black,
                   )),
             ],
-            title: Text(
-              Strings.app_title,
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Nunito',
-                letterSpacing: 0.3,
-              ),
+            title: Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(image: AssetImage("group2_blue.png"),
+                  ),
+                )
             ),
           ),
         ),

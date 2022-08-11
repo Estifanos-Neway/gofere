@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gofere_travels/constants/strings.dart';
+import 'package:gofere_travels/pages/auth.dart';
 import 'package:gofere_travels/pages/carrentalpage.dart';
 import 'package:gofere_travels/pages/flagpage.dart';
 import 'package:gofere_travels/pages/homepage.dart';
@@ -58,6 +59,7 @@ class _IndexPageState extends State<IndexPage> {
                   padding: EdgeInsets.fromLTRB(0, 0, 25, 0),
                   iconSize: 30,
                   onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => AuthPage()));
                   },
                   icon: Icon(
                     Icons.person,

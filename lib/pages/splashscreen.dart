@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:gofere_travels/pages/homescreen.dart';
+import 'package:gofere_travels/pages/indexpage.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
       Timer(
         Duration(seconds: 2),
-            () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>  HomePage())),);
+            () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>  IndexPage())),);
   }
 
   @override

@@ -1,14 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:gofere_travels/constants/strings.dart';
+import 'package:gofere_travels/pages/carrentalpage.dart';
+import 'package:gofere_travels/pages/flagpage.dart';
+import 'package:gofere_travels/pages/homepage.dart';
+import 'package:gofere_travels/pages/hotelpage.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class IndexPage extends StatefulWidget {
+  const IndexPage({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<IndexPage> createState() => _IndexPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _IndexPageState extends State<IndexPage> {
+
+  int index = 0;
+  final screens = [
+    HomePage(),
+    HotelPage(),
+    CarRentalPage(),
+    FlagPage()
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,28 +77,29 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      body: Center(
-        child: Text("HomePage"),
-      ),
+      body: screens[index],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
+        currentIndex: index,
+        selectedItemColor: Colors.black,
         iconSize: 28,
+        onTap: (index) => setState(() => this.index = index),
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home_filled),
             label: "Home",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_filled),
-            label: "Home",
+            icon: Icon(Icons.bed),
+            label: "Hotel",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_filled),
-            label: "Home",
+            icon: Icon(Icons.car_rental),
+            label: "Car Rental",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_filled),
-            label: "Home",
+            icon: Icon(Icons.flag),
+            label: "Flag",
           ),
         ],
       ),

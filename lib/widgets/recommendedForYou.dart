@@ -94,16 +94,19 @@ class _RecommendedForYouState extends State<RecommendedForYou> {
             ),
           ),
           SizedBox(height: 20,),
-          GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
-                childAspectRatio: (180 / 320),),
-              itemCount: 5,
-              physics: NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemBuilder: (context, index){
-                return Container(
-                    child: RecommendedContainer(context));
-              }),
+          Container(
+            margin: EdgeInsets.only(left: 10, right: 10, bottom: 30),
+            height: 400,
+            child: ListView.builder(
+                itemCount: 5,
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index){
+                  return Container(
+                      width: 300,
+                      child: RecommendedContainer(context));
+                }),
+          ),
         ],
       ),
     );

@@ -6,6 +6,8 @@ import 'package:gofere_travels/widgets/recommendedContainer.dart';
 import 'package:gofere_travels/widgets/recommendedForYou.dart';
 import 'package:gofere_travels/widgets/specialOffers.dart';
 import 'package:gofere_travels/widgets/special_offer_container.dart';
+import 'package:gofere_travels/widgets/topDestinationContainer.dart';
+import 'package:gofere_travels/widgets/topDestinationPage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -28,29 +30,8 @@ class _HomePageState extends State<HomePage> {
           children: [
             HomeFirst(),
             SpecialOffers(),
+            TopDestinationPage(),
             RecommendedForYou(),
-            Container(
-              height: MediaQuery.of(context).size.height - 140,
-              width: MediaQuery.of(context).size.width,
-              color: Colors.white,
-              child: Column(
-                children: [
-                  Center(
-                    child: Container(
-                      margin: EdgeInsets.only(top: 10),
-                      child: Text("Top destinations",
-                        style: TextStyle(
-                            fontSize: 30,
-                            color: Colors.black,
-                            fontWeight: FontWeight.w500
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
           ],
         ),
       )

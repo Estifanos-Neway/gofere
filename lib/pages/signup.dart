@@ -15,7 +15,7 @@ class SignupPage extends StatefulWidget {
 class _SignupPageState extends State<SignupPage> {
   bool isTermAcceptChecked = false;
 
-  String? userType;
+  String userType = 'normal';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

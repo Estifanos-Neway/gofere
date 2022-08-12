@@ -69,6 +69,8 @@ flutter:
     - images/place1.jpg
     - images/place2.jpg
     - images/car1.jpg
+    - images/tour_location.png
+    - images/logo_max.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

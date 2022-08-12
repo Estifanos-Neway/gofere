@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gofere_travels/pages/tour_details_page.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/zondicons.dart';
 
@@ -22,32 +23,37 @@ Widget RecommendedTourContainer(BuildContext context) {
       children: [
         Column(
           children: [
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: 170,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("images/hotel1.jpg"),
-                      fit: BoxFit.cover),
-                  borderRadius:
-                      BorderRadius.vertical(top: Radius.circular(12))),
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => TourDetailsPage()));
+              },
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                height: 125,
+                height: 170,
                 decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.3),
+                    image: DecorationImage(
+                        image: AssetImage("images/hotel1.jpg"),
+                        fit: BoxFit.cover),
                     borderRadius:
                         BorderRadius.vertical(top: Radius.circular(12))),
-                padding: EdgeInsets.only(top: 2, right: 2),
-                child: Align(
-                    alignment: Alignment.topRight,
-                    child: IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.favorite_border_outlined,
-                          size: 25,
-                          color: Colors.white,
-                        ))),
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 125,
+                  decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.3),
+                      borderRadius:
+                          BorderRadius.vertical(top: Radius.circular(12))),
+                  padding: EdgeInsets.only(top: 2, right: 2),
+                  child: Align(
+                      alignment: Alignment.topRight,
+                      child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.favorite_border_outlined,
+                            size: 25,
+                            color: Colors.white,
+                          ))),
+                ),
               ),
             ),
             SizedBox(
@@ -80,12 +86,19 @@ Widget RecommendedTourContainer(BuildContext context) {
                   SizedBox(
                     height: 10,
                   ),
-                  Text(
-                    "Western Blt From San Francisco",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => TourDetailsPage()));
+                    },
+                    child: Container(
+                      child: Text(
+                        "Western Blt From San Francisco",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: 10,

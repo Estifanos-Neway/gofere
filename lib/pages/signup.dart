@@ -14,7 +14,8 @@ class SignupPage extends StatefulWidget {
 
 class _SignupPageState extends State<SignupPage> {
   bool isTermAcceptChecked = false;
-  bool isNormalUser = true;
+
+  String? userType;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -129,47 +130,54 @@ class _SignupPageState extends State<SignupPage> {
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 20,
+              ),
+              Text(
+                "User Type",
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 16,
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    children: [
-                      Checkbox(
-                        shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(50))),
-                        value: isNormalUser,
-                        onChanged: (v) {
-                          setState(() {
-                            isNormalUser = true;
-                          });
-                        },
+                  Flexible(
+                    child: RadioListTile(
+                      title: Text(
+                        "Normal",
+                        style: TextStyle(fontSize: 14),
+                        maxLines: 1,
                       ),
-                      Text("Normal User"),
-                    ],
+                      value: "normal",
+                      groupValue: userType,
+                      onChanged: (value) {
+                        setState(() {
+                          userType = value.toString();
+                        });
+                      },
+                    ),
                   ),
-                  Row(
-                    children: [
-                      Checkbox(
-                        shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(50))),
-                        value: !isNormalUser,
-                        onChanged: (v) {
-                          setState(() {
-                            isNormalUser = false;
-                          });
-                        },
+                  Flexible(
+                    child: RadioListTile(
+                      title: Text(
+                        "Partner",
+                        style: TextStyle(fontSize: 14),
+                        maxLines: 1,
                       ),
-                      Text("Partner User"),
-                    ],
+                      value: "partner",
+                      groupValue: userType,
+                      onChanged: (value) {
+                        setState(() {
+                          userType = value.toString();
+                        });
+                      },
+                    ),
                   ),
                 ],
               ),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
               Container(
                 width: double.infinity,
@@ -195,23 +203,29 @@ class _SignupPageState extends State<SignupPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    children: [
-                      Checkbox(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(5))),
-                        value: isTermAcceptChecked,
-                        onChanged: (v) {
-                          setState(() {
-                            isTermAcceptChecked = v!;
-                          });
-                        },
-                      ),
-                      Text(
-                        "I confirm that I have read and acceptd the privacy policy",
-                        maxLines: 2,
-                      ),
-                    ],
+                  Container(
+                    width: MediaQuery.of(context).size.width - 60,
+                    child: Row(
+                      children: [
+                        Checkbox(
+                          shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5))),
+                          value: isTermAcceptChecked,
+                          onChanged: (v) {
+                            setState(() {
+                              isTermAcceptChecked = v!;
+                            });
+                          },
+                        ),
+                        Expanded(
+                          child: Text(
+                            "I confirm that I have read and acceptd the privacy policy",
+                            maxLines: 2,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),

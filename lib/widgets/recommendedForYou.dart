@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gofere_travels/widgets/recommendedCarContainer.dart';
+import 'package:gofere_travels/widgets/recommendedHotelContainer.dart';
 import 'package:gofere_travels/widgets/recommendedTourContainer.dart';
 
 class RecommendedForYou extends StatefulWidget {
@@ -106,7 +107,7 @@ class _RecommendedForYouState extends State<RecommendedForYou> {
                 itemBuilder: (context, index){
                   return Container(
                       width: 300,
-                      child: RecommendedCarContainer(context));
+                      child: RecommendedTourContainer(context));
                 }),
           ),
         ],

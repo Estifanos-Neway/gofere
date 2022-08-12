@@ -18,7 +18,7 @@ class _RecommendedForYouState extends State<RecommendedForYou> {
   int current = 0;
   List<Widget> recommended = [
     ListView.builder(
-      itemCount: tours.length,
+      itemCount: tours.length < 6 ? tours.length : 6,
       shrinkWrap: true,
       scrollDirection: Axis.horizontal,
       itemBuilder: (context, index) {
@@ -38,7 +38,7 @@ class _RecommendedForYouState extends State<RecommendedForYou> {
       },
     ),
     ListView.builder(
-      itemCount: hotels.length,
+      itemCount: hotels.length < 6 ? hotels.length : 6,
       shrinkWrap: true,
       scrollDirection: Axis.horizontal,
       itemBuilder: (context, index) {
@@ -58,7 +58,7 @@ class _RecommendedForYouState extends State<RecommendedForYou> {
       },
     ),
     ListView.builder(
-      itemCount: cars.length,
+      itemCount: cars.length < 6 ? cars.length : 6,
       shrinkWrap: true,
       scrollDirection: Axis.horizontal,
       itemBuilder: (context, index) {
@@ -81,7 +81,7 @@ class _RecommendedForYouState extends State<RecommendedForYou> {
       },
     ),
     ListView.builder(
-      itemCount: hotels.length,
+      itemCount: hotels.length < 6 ? hotels.length : 6,
       shrinkWrap: true,
       scrollDirection: Axis.horizontal,
       itemBuilder: (context, index) {

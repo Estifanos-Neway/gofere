@@ -30,13 +30,8 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                "Gofere Travels",
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 36,
-                  fontFamily: 'Nunito',
-                ),
+              Image.asset(
+                "images/group2_blue.png",
               ),
             ],
           ),

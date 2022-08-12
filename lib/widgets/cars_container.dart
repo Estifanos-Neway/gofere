@@ -214,36 +214,76 @@ Widget CarsContainer(
         ),
         Align(
           alignment: Alignment.topLeft,
-          child: Container(
-            padding: EdgeInsets.all(5),
-            margin: EdgeInsets.only(top: 15, left: 15),
-            decoration: BoxDecoration(
-                color: Colors.blue, borderRadius: BorderRadius.circular(6)),
-            child: Text(
-              "Featured",
-              style: TextStyle(
-                  fontWeight: FontWeight.w900,
-                  color: Colors.white,
-                  fontSize: 10),
-            ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              featured
+                  ? Container(
+                      padding: EdgeInsets.all(5),
+                      margin: EdgeInsets.only(top: 15, left: 15, bottom: 5),
+                      decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(6)),
+                      child: Text(
+                        "Featured",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w900,
+                            color: Colors.white,
+                            fontSize: 10),
+                      ),
+                    )
+                  : SizedBox(),
+              Container(
+                padding: EdgeInsets.all(5),
+                margin: featured
+                    ? EdgeInsets.all(0)
+                    : EdgeInsets.only(top: 15, left: 15, bottom: 5),
+                decoration: BoxDecoration(
+                    color: Colors.red[600],
+                    borderRadius: BorderRadius.circular(6)),
+                child: Text(
+                  discount,
+                  style: TextStyle(
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                      fontSize: 10),
+                ),
+              ),
+            ],
           ),
         ),
-        Align(
-          alignment: Alignment.topLeft,
-          child: Container(
-            padding: EdgeInsets.all(5),
-            margin: EdgeInsets.only(top: 40, left: 15),
-            decoration: BoxDecoration(
-                color: Colors.red[600], borderRadius: BorderRadius.circular(6)),
-            child: Text(
-              discount,
-              style: TextStyle(
-                  fontWeight: FontWeight.w900,
-                  color: Colors.white,
-                  fontSize: 10),
-            ),
-          ),
-        ),
+        // Align(
+        //   alignment: Alignment.topLeft,
+        //   child: Container(
+        //     padding: EdgeInsets.all(5),
+        //     margin: EdgeInsets.only(top: 15, left: 15),
+        //     decoration: BoxDecoration(
+        //         color: Colors.blue, borderRadius: BorderRadius.circular(6)),
+        //     child: Text(
+        //       "Featured",
+        //       style: TextStyle(
+        //           fontWeight: FontWeight.w900,
+        //           color: Colors.white,
+        //           fontSize: 10),
+        //     ),
+        //   ),
+        // ),
+        // Align(
+        //   alignment: Alignment.topLeft,
+        //   child: Container(
+        //     padding: EdgeInsets.all(5),
+        //     margin: EdgeInsets.only(top: 40, left: 15),
+        //     decoration: BoxDecoration(
+        //         color: Colors.red[600], borderRadius: BorderRadius.circular(6)),
+        //     child: Text(
+        //       discount,
+        //       style: TextStyle(
+        //           fontWeight: FontWeight.w900,
+        //           color: Colors.white,
+        //           fontSize: 10),
+        //     ),
+        //   ),
+        // ),
       ],
     ),
   );

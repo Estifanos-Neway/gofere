@@ -20,7 +20,7 @@ List<Map<String, dynamic>> cars = [
     "type": "manual",
     "bagCapacity": 3,
     "price": "120.00 ETB",
-    "featured": true,
+    "featured": false,
     "discount": "-10%",
   },
 ];

@@ -14,6 +14,7 @@ class SignupPage extends StatefulWidget {
 
 class _SignupPageState extends State<SignupPage> {
   bool isTermAcceptChecked = false;
+  bool isNormalUser = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -128,7 +129,7 @@ class _SignupPageState extends State<SignupPage> {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -139,8 +140,12 @@ class _SignupPageState extends State<SignupPage> {
                         shape: RoundedRectangleBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(50))),
-                        value: false,
-                        onChanged: (newValue) {},
+                        value: isNormalUser,
+                        onChanged: (v) {
+                          setState(() {
+                            isNormalUser = true;
+                          });
+                        },
                       ),
                       Text("Normal User"),
                     ],
@@ -151,13 +156,20 @@ class _SignupPageState extends State<SignupPage> {
                         shape: RoundedRectangleBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(50))),
-                        value: false,
-                        onChanged: (newValue) {},
+                        value: !isNormalUser,
+                        onChanged: (v) {
+                          setState(() {
+                            isNormalUser = false;
+                          });
+                        },
                       ),
                       Text("Partner User"),
                     ],
                   ),
                 ],
+              ),
+              SizedBox(
+                height: 20,
               ),
               Container(
                 width: double.infinity,

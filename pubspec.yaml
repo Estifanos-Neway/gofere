@@ -73,6 +73,37 @@ flutter:
     - images/tour_location.png
     - images/logo_max.png
     - images/logo_small.png
+    - images/c1.jpg
+    - images/c2.jpg
+    - images/c3.jpg
+    - images/c4.jpg
+    - images/c5.png
+    - images/c6.jpg
+    - images/t1.jpg
+    - images/t2.jpg
+    - images/t3.jpg
+    - images/t4.jpg
+    - images/t5.jpg
+    - images/t6.jpg
+    - images/t7.jpg
+    - images/t8.jpg
+    - images/t9.jpg
+    - images/t10.jpg
+    - images/h1.jpg
+    - images/h2.jpg
+    - images/h3.jpg
+    - images/h4.jpg
+    - images/h5.jpg
+    - images/h6.jpg
+    - images/h7.jpg
+    - images/h8.jpg
+    - images/h9.jpg
+    - images/h10.jpg
+    - images/r1.jpg
+    - images/r2.jpg
+    - images/r3.jpg
+    - images/r4.jpg
+    - images/r5.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

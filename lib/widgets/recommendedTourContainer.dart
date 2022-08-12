@@ -3,7 +3,16 @@ import 'package:gofere_travels/pages/tour_details_page.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/zondicons.dart';
 
-Widget RecommendedTourContainer(BuildContext context) {
+Widget RecommendedTourContainer(
+  BuildContext context,
+  String name,
+  String imageUrl,
+  String location,
+  double starCount,
+  int reviewCount,
+  String price,
+  String duration,
+) {
   return Container(
     width: MediaQuery.of(context).size.width,
     height: 350,
@@ -24,16 +33,16 @@ Widget RecommendedTourContainer(BuildContext context) {
         Column(
           children: [
             GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => TourDetailsPage()));
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => TourDetailsPage()));
               },
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: 170,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage("images/hotel1.jpg"),
-                        fit: BoxFit.cover),
+                        image: AssetImage(imageUrl), fit: BoxFit.cover),
                     borderRadius:
                         BorderRadius.vertical(top: Radius.circular(12))),
                 child: Container(
@@ -78,7 +87,7 @@ Widget RecommendedTourContainer(BuildContext context) {
                         width: 2,
                       ),
                       Text(
-                        "New York City",
+                        location,
                         style: TextStyle(color: Colors.black54, fontSize: 15),
                       )
                     ],
@@ -87,12 +96,15 @@ Widget RecommendedTourContainer(BuildContext context) {
                     height: 10,
                   ),
                   GestureDetector(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => TourDetailsPage()));
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => TourDetailsPage()));
                     },
                     child: Container(
                       child: Text(
-                        "Western Blt From San Francisco",
+                        name,
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 18,
@@ -110,14 +122,15 @@ Widget RecommendedTourContainer(BuildContext context) {
                         color: Colors.orangeAccent,
                         size: 19,
                       ),
-                      Text(" 5",
+                      Text(" $starCount",
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 15,
                               fontWeight: FontWeight.bold)),
-                      Text(" (3 Reviews)",
-                          style:
-                              TextStyle(color: Colors.black54, fontSize: 15),),
+                      Text(
+                        " ($reviewCount Reviews)",
+                        style: TextStyle(color: Colors.black54, fontSize: 15),
+                      ),
                     ],
                   ),
                   SizedBox(
@@ -136,10 +149,11 @@ Widget RecommendedTourContainer(BuildContext context) {
                         children: [
                           Text(
                             "From ",
-                            style: TextStyle(color: Colors.black54, fontSize: 15),
+                            style:
+                                TextStyle(color: Colors.black54, fontSize: 15),
                           ),
                           Text(
-                            "300.00 ETB",
+                            price,
                             style: TextStyle(color: Colors.black, fontSize: 15),
                           )
                         ],
@@ -151,10 +165,13 @@ Widget RecommendedTourContainer(BuildContext context) {
                             color: Colors.black54,
                           ),
                           Text(
-                            " 5 hours",
-                            style: TextStyle(color: Colors.black54, fontSize: 15),
+                            " $duration",
+                            style:
+                                TextStyle(color: Colors.black54, fontSize: 15),
                           ),
-                          SizedBox(width: 10,)
+                          SizedBox(
+                            width: 10,
+                          )
                         ],
                       )
                     ],

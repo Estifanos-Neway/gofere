@@ -2,7 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/zondicons.dart';
 
-Widget HotelsContainer(BuildContext context){
+Widget HotelsContainer(
+  BuildContext context,
+  String name,
+  String imageUrl,
+  String location,
+  double starCount,
+  int reviewCount,
+  String price,
+  String ratingTag,
+) {
   return Container(
     width: 180,
     margin: EdgeInsets.fromLTRB(10, 0, 10, 20),
@@ -26,17 +35,16 @@ Widget HotelsContainer(BuildContext context){
               height: 125,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("images/hotel1.jpg"),
-                      fit: BoxFit.cover),
+                      image: AssetImage(imageUrl), fit: BoxFit.cover),
                   borderRadius:
-                  BorderRadius.vertical(top: Radius.circular(12))),
+                      BorderRadius.vertical(top: Radius.circular(12))),
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: 125,
                 decoration: BoxDecoration(
                     color: Colors.black.withOpacity(0.3),
                     borderRadius:
-                    BorderRadius.vertical(top: Radius.circular(12))),
+                        BorderRadius.vertical(top: Radius.circular(12))),
                 padding: EdgeInsets.only(top: 2, right: 2),
                 child: Align(
                     alignment: Alignment.topRight,
@@ -67,13 +75,8 @@ Widget HotelsContainer(BuildContext context){
                         color: Colors.orange,
                         size: 12,
                       ),
-                      SizedBox(
-                        width: 2,
-                      ),
-                      Icon(
-                        Icons.star,
-                        color: Colors.orange,
-                        size: 12,
+                      Text(
+                        " $starCount",
                       ),
                     ],
                   ),
@@ -81,7 +84,7 @@ Widget HotelsContainer(BuildContext context){
                     height: 5,
                   ),
                   Text(
-                    "Capital Hotel and Spa",
+                    name,
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 13,
@@ -91,7 +94,7 @@ Widget HotelsContainer(BuildContext context){
                     height: 5,
                   ),
                   Text(
-                    "Addis Ababa",
+                    location,
                     style: TextStyle(color: Colors.black54, fontSize: 12),
                   ),
                   SizedBox(
@@ -109,27 +112,24 @@ Widget HotelsContainer(BuildContext context){
                         padding: EdgeInsets.all(5),
                         decoration: BoxDecoration(
                             border: Border.all(color: Colors.blue),
-                            borderRadius: BorderRadius.circular(8)
-                        ),
-                        child: Text("5 / 5", style: TextStyle(
-                            color: Colors.blue, fontSize: 12
-                        ),
+                            borderRadius: BorderRadius.circular(8)),
+                        child: Text(
+                          "$starCount / 5",
+                          style: TextStyle(color: Colors.blue, fontSize: 12),
                         ),
                       ),
-                      SizedBox(width: 10,),
+                      SizedBox(
+                        width: 10,
+                      ),
                       Text(
-                        "Excellent",
-                        style: TextStyle(color: Colors.black, fontSize: 12, fontWeight: FontWeight.w500),
+                        ratingTag,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500),
                       ),
                     ],
                   ),
-                  // SizedBox(
-                  //   height: 5,
-                  // ),
-                  // Text(
-                  //   "4 Reviews",
-                  //   style: TextStyle(color: Colors.black54, fontSize: 12),
-                  // ),
                   SizedBox(
                     height: 5,
                   ),
@@ -140,15 +140,17 @@ Widget HotelsContainer(BuildContext context){
                         children: [
                           Text(
                             "From: ",
-                            style: TextStyle(color: Colors.black54, fontSize: 12),
+                            style:
+                                TextStyle(color: Colors.black54, fontSize: 12),
                           ),
                           Text(
-                            "300.00 ETB",
+                            price,
                             style: TextStyle(color: Colors.black, fontSize: 12),
                           ),
                           Text(
                             " / night",
-                            style: TextStyle(color: Colors.black54, fontSize: 12),
+                            style:
+                                TextStyle(color: Colors.black54, fontSize: 12),
                           ),
                         ],
                       ),

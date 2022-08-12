@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gofere_travels/constants/strings.dart';
-import 'package:gofere_travels/pages/auth.dart';
 import 'package:gofere_travels/pages/carrentalpage.dart';
 import 'package:gofere_travels/pages/signin.dart';
 import 'package:gofere_travels/pages/tourpage.dart';

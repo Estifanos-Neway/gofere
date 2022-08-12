@@ -2,7 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/zondicons.dart';
 
-Widget RecommendedHotelsContainer(BuildContext context) {
+Widget RecommendedHotelsContainer(
+    BuildContext context,
+    String name,
+    String imageUrl,
+    String location,
+    double starCount,
+    int reviewCount,
+    String price,
+    String ratingTag) {
   return Container(
     width: MediaQuery.of(context).size.width,
     height: 350,
@@ -27,17 +35,16 @@ Widget RecommendedHotelsContainer(BuildContext context) {
               height: 170,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("images/hotel1.jpg"),
-                      fit: BoxFit.cover),
+                      image: AssetImage(imageUrl), fit: BoxFit.cover),
                   borderRadius:
-                  BorderRadius.vertical(top: Radius.circular(12))),
+                      BorderRadius.vertical(top: Radius.circular(12))),
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: 125,
                 decoration: BoxDecoration(
                     color: Colors.black.withOpacity(0.3),
                     borderRadius:
-                    BorderRadius.vertical(top: Radius.circular(12))),
+                        BorderRadius.vertical(top: Radius.circular(12))),
                 padding: EdgeInsets.only(top: 2, right: 2),
                 child: Align(
                     alignment: Alignment.topRight,
@@ -68,13 +75,8 @@ Widget RecommendedHotelsContainer(BuildContext context) {
                         color: Colors.orange,
                         size: 18,
                       ),
-                      SizedBox(
-                        width: 2,
-                      ),
-                      Icon(
-                        Icons.star,
-                        color: Colors.orange,
-                        size: 18,
+                      Text(
+                        " $starCount",
                       ),
                     ],
                   ),
@@ -82,7 +84,7 @@ Widget RecommendedHotelsContainer(BuildContext context) {
                     height: 5,
                   ),
                   Text(
-                    "Capital Hotel and Spa",
+                    name,
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 18,
@@ -92,7 +94,7 @@ Widget RecommendedHotelsContainer(BuildContext context) {
                     height: 10,
                   ),
                   Text(
-                    "Addis Ababa",
+                    location,
                     style: TextStyle(color: Colors.black54, fontSize: 15),
                   ),
                   SizedBox(
@@ -109,21 +111,25 @@ Widget RecommendedHotelsContainer(BuildContext context) {
                       Container(
                         padding: EdgeInsets.all(7),
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.blue),
-                          borderRadius: BorderRadius.circular(8)
-                        ),
-                        child: Text("5 / 5", style: TextStyle(
-                            color: Colors.blue, fontSize: 15
-                        ),
+                            border: Border.all(color: Colors.blue),
+                            borderRadius: BorderRadius.circular(8)),
+                        child: Text(
+                          "$starCount / 5",
+                          style: TextStyle(color: Colors.blue, fontSize: 15),
                         ),
                       ),
-                      SizedBox(width: 10,),
-                      Text(
-                        "Excellent",
-                        style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.w500),
+                      SizedBox(
+                        width: 10,
                       ),
                       Text(
-                        " (4 Reviews)",
+                        ratingTag,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      Text(
+                        " ($reviewCount Reviews)",
                         style: TextStyle(color: Colors.black54, fontSize: 15),
                       ),
                     ],
@@ -138,15 +144,17 @@ Widget RecommendedHotelsContainer(BuildContext context) {
                         children: [
                           Text(
                             "From: ",
-                            style: TextStyle(color: Colors.black54, fontSize: 15),
+                            style:
+                                TextStyle(color: Colors.black54, fontSize: 15),
                           ),
                           Text(
-                            "300.00 ETB",
+                            price,
                             style: TextStyle(color: Colors.black, fontSize: 15),
                           ),
                           Text(
                             " / night",
-                            style: TextStyle(color: Colors.black54, fontSize: 15),
+                            style:
+                                TextStyle(color: Colors.black54, fontSize: 15),
                           ),
                         ],
                       ),

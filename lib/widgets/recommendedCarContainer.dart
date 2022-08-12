@@ -4,7 +4,19 @@ import 'package:iconify_flutter/icons/uil.dart';
 import 'package:iconify_flutter/icons/tabler.dart';
 import 'package:iconify_flutter/icons/mdi.dart';
 
-Widget RecommendedCarContainer(BuildContext context) {
+Widget RecommendedCarContainer(
+  BuildContext context,
+  String name,
+  String imageUrl,
+  String category,
+  int seats,
+  int doors,
+  int bagCapacity,
+  String type,
+  String price,
+  bool featured,
+  String discount,
+) {
   return Container(
     width: MediaQuery.of(context).size.width,
     height: 350,
@@ -30,17 +42,14 @@ Widget RecommendedCarContainer(BuildContext context) {
               margin: EdgeInsets.all(8),
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("images/car1.jpg"),
-                      fit: BoxFit.cover),
-                  borderRadius:
-                  BorderRadius.circular(12)),
+                      image: AssetImage(imageUrl), fit: BoxFit.cover),
+                  borderRadius: BorderRadius.circular(12)),
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: 125,
                 decoration: BoxDecoration(
                     color: Colors.black.withOpacity(0.3),
-                    borderRadius:
-                    BorderRadius.circular(12)),
+                    borderRadius: BorderRadius.circular(12)),
                 padding: EdgeInsets.only(top: 2, right: 2),
                 child: Align(
                     alignment: Alignment.topRight,
@@ -64,7 +73,7 @@ Widget RecommendedCarContainer(BuildContext context) {
                   Row(
                     children: [
                       Text(
-                        "Convertibles",
+                        category,
                         style: TextStyle(color: Colors.black54, fontSize: 15),
                       )
                     ],
@@ -73,7 +82,7 @@ Widget RecommendedCarContainer(BuildContext context) {
                     height: 5,
                   ),
                   Text(
-                    "Toyota Sequoia 4dr SUV",
+                    name,
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 18,
@@ -93,9 +102,13 @@ Widget RecommendedCarContainer(BuildContext context) {
                               borderRadius: BorderRadius.circular(8),
                               border: Border.all(color: Colors.black54),
                             ),
-                            child: Iconify(Uil.users_alt, size: 22, color: Colors.black54,),
+                            child: Iconify(
+                              Uil.users_alt,
+                              size: 22,
+                              color: Colors.black54,
+                            ),
                           ),
-                          Text("4")
+                          Text("$seats")
                         ],
                       ),
                       Column(
@@ -106,9 +119,13 @@ Widget RecommendedCarContainer(BuildContext context) {
                               borderRadius: BorderRadius.circular(8),
                               border: Border.all(color: Colors.black54),
                             ),
-                            child: Iconify(Tabler.manual_gearbox, size: 22, color: Colors.black54,),
+                            child: Iconify(
+                              Tabler.manual_gearbox,
+                              size: 22,
+                              color: Colors.black54,
+                            ),
                           ),
-                          Text("manual")
+                          Text(type)
                         ],
                       ),
                       Column(
@@ -119,9 +136,13 @@ Widget RecommendedCarContainer(BuildContext context) {
                               borderRadius: BorderRadius.circular(8),
                               border: Border.all(color: Colors.black54),
                             ),
-                            child: Iconify(Mdi.bag_suitcase_outline, size: 22, color: Colors.black54,),
+                            child: Iconify(
+                              Mdi.bag_suitcase_outline,
+                              size: 22,
+                              color: Colors.black54,
+                            ),
                           ),
-                          Text("4")
+                          Text("$bagCapacity")
                         ],
                       ),
                       Column(
@@ -132,9 +153,13 @@ Widget RecommendedCarContainer(BuildContext context) {
                               borderRadius: BorderRadius.circular(8),
                               border: Border.all(color: Colors.black54),
                             ),
-                            child: Iconify(Mdi.car_door, size: 22, color: Colors.black54,),
+                            child: Iconify(
+                              Mdi.car_door,
+                              size: 22,
+                              color: Colors.black54,
+                            ),
                           ),
-                          Text("4")
+                          Text("$doors")
                         ],
                       ),
                     ],
@@ -154,12 +179,16 @@ Widget RecommendedCarContainer(BuildContext context) {
                       Row(
                         children: [
                           Text(
-                            "72.00 ETB ",
-                            style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
+                            "$price ",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold),
                           ),
                           Text(
                             "/ day",
-                            style: TextStyle(color: Colors.black54, fontSize: 15),
+                            style:
+                                TextStyle(color: Colors.black54, fontSize: 15),
                           ),
                         ],
                       ),
@@ -187,14 +216,14 @@ Widget RecommendedCarContainer(BuildContext context) {
             padding: EdgeInsets.all(9),
             margin: EdgeInsets.only(top: 15, left: 15),
             decoration: BoxDecoration(
-                color: Colors.blue,
-              borderRadius: BorderRadius.circular(6)
+                color: Colors.blue, borderRadius: BorderRadius.circular(6)),
+            child: Text(
+              "Featured",
+              style: TextStyle(
+                  fontWeight: FontWeight.w900,
+                  color: Colors.white,
+                  fontSize: 12),
             ),
-            child: Text("Featured", style: TextStyle(
-              fontWeight: FontWeight.w900,
-              color: Colors.white,
-              fontSize: 12
-            ),),
           ),
         ),
         Align(
@@ -203,14 +232,14 @@ Widget RecommendedCarContainer(BuildContext context) {
             padding: EdgeInsets.all(9),
             margin: EdgeInsets.only(top: 53, left: 15),
             decoration: BoxDecoration(
-                color: Colors.red[600],
-                borderRadius: BorderRadius.circular(6)
+                color: Colors.red[600], borderRadius: BorderRadius.circular(6)),
+            child: Text(
+              discount,
+              style: TextStyle(
+                  fontWeight: FontWeight.w900,
+                  color: Colors.white,
+                  fontSize: 12),
             ),
-            child: Text("-10%", style: TextStyle(
-                fontWeight: FontWeight.w900,
-                color: Colors.white,
-                fontSize: 12
-            ),),
           ),
         ),
       ],

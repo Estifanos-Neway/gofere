@@ -38,6 +38,7 @@ dependencies:
   iconify_flutter: ^0.0.4
   font_awesome_flutter: ^10.1.0
   flutter_rating_bar: ^4.0.1
+  flutter_staggered_grid_view: ^0.6.2
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +72,7 @@ flutter:
     - images/car1.jpg
     - images/tour_location.png
     - images/logo_max.png
+    - images/logo_small.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

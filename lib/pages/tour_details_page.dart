@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:gofere_travels/constants/colors.dart';
 import 'package:gofere_travels/pages/signin.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/uiw.dart';
 import 'package:iconify_flutter/icons/ic.dart';
+import 'package:iconify_flutter/icons/charm.dart';
 
 class TourDetailsPage extends StatefulWidget {
   const TourDetailsPage({Key? key}) : super(key: key);
@@ -13,6 +15,7 @@ class TourDetailsPage extends StatefulWidget {
 }
 
 class _TourDetailsPageState extends State<TourDetailsPage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -273,6 +276,88 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                     ],
                   ),
                 ),
+                SizedBox(height: 30,),
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 10),
+                      height: 320,
+                      child: Stack(
+                        children: [
+                          StaggeredGrid.count(
+                            crossAxisCount: 4,
+                            mainAxisSpacing: 4,
+                            crossAxisSpacing: 4,
+                            children: [
+                              StaggeredGridTile.count(
+                                  crossAxisCellCount: 4,
+                                  mainAxisCellCount: 2,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        image: DecorationImage(image: AssetImage("images/place1.jpg"), fit: BoxFit.cover)
+                                    ),
+                                    child: Container(
+                                      color: Colors.black.withOpacity(0.3),
+                                    ),
+                                  )),
+                              StaggeredGridTile.count(
+                                  crossAxisCellCount: 2,
+                                  mainAxisCellCount: 2,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        image: DecorationImage(image: AssetImage("images/place2.jpg"), fit: BoxFit.cover)
+                                    ),
+                                    child: Container(
+                                      color: Colors.black.withOpacity(0.3),
+                                    ),
+                                  )),
+                              StaggeredGridTile.count(
+                                  crossAxisCellCount: 2,
+                                  mainAxisCellCount: 1,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        image: DecorationImage(image: AssetImage("images/car1.jpg"), fit: BoxFit.cover)
+                                    ),
+                                    child: Container(
+                                      color: Colors.black.withOpacity(0.3),
+                                    ),
+                                  )),
+                              StaggeredGridTile.count(
+                                  crossAxisCellCount: 2,
+                                  mainAxisCellCount: 1,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        image: DecorationImage(image: AssetImage("images/place1.jpg"), fit: BoxFit.cover)
+                                    ),
+                                    child: Container(
+                                      color: Colors.black.withOpacity(0.3),
+                                    ),
+                                  )),
+                            ],
+                          ),
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: Container(
+                              width: 124,
+                              margin: EdgeInsets.only(right: 5),
+                              child: ElevatedButton(
+                                onPressed: (){},
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.black.withOpacity(0.4),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)
+                                  )
+                                ),
+                                child: Row(
+                                  children: [
+                                    Iconify(Charm.apps, color: Colors.white, size: 15,),
+                                    Text("  All Photo", style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w500),),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                 SizedBox(height: 40,),
                 Divider(color: Colors.black,),
                 SizedBox(height: 20,),
@@ -316,6 +401,7 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
               ],
             )
             ),
+
           ],
         ),
       )

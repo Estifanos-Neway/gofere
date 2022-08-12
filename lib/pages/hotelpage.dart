@@ -1,7 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:gofere_travels/widgets/hotels_container.dart';
-import 'package:gofere_travels/widgets/recommendedContainer.dart';
+import 'package:gofere_travels/widgets/tours_container.dart';
+import 'package:gofere_travels/widgets/recommendedTourContainer.dart';
 
 class HotelPage extends StatefulWidget {
   const HotelPage({Key? key}) : super(key: key);

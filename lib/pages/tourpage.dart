@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:gofere_travels/widgets/cars_container.dart';
+import 'package:gofere_travels/widgets/tours_container.dart';
 
-class CarRentalPage extends StatefulWidget {
-  const CarRentalPage({Key? key}) : super(key: key);
+class TourPage extends StatefulWidget {
+  const TourPage({Key? key}) : super(key: key);
 
   @override
-  State<CarRentalPage> createState() => _CarRentalPageState();
+  State<TourPage> createState() => _TourPageState();
 }
 
-class _CarRentalPageState extends State<CarRentalPage> {
+class _TourPageState extends State<TourPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +23,7 @@ class _CarRentalPageState extends State<CarRentalPage> {
                   Center(
                     child: Container(
                       margin: EdgeInsets.only(top: 10, left: 20, right: 20),
-                      child: Text("Cars",
+                      child: Text("Tours",
                         style: TextStyle(
                             fontSize: 35,
                             color: Colors.black87,
@@ -42,7 +42,7 @@ class _CarRentalPageState extends State<CarRentalPage> {
                       shrinkWrap: true,
                       itemBuilder: (context, index){
                         return Container(
-                            child: CarsContainer(context));
+                            child: ToursContainer(context));
                       }),
                 ],
               ),

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:gofere_travels/constants/strings.dart';
 import 'package:gofere_travels/pages/auth.dart';
 import 'package:gofere_travels/pages/carrentalpage.dart';
-import 'package:gofere_travels/pages/flagpage.dart';
+import 'package:gofere_travels/pages/tourpage.dart';
 import 'package:gofere_travels/pages/homepage.dart';
 import 'package:gofere_travels/pages/hotelpage.dart';
+import 'package:iconify_flutter/iconify_flutter.dart';
+import 'package:iconify_flutter/icons/uiw.dart';
 
 class IndexPage extends StatefulWidget {
   const IndexPage({Key? key}) : super(key: key);
@@ -20,7 +22,7 @@ class _IndexPageState extends State<IndexPage> {
     HomePage(),
     HotelPage(),
     CarRentalPage(),
-    FlagPage()
+    TourPage()
   ];
 
   @override
@@ -61,10 +63,7 @@ class _IndexPageState extends State<IndexPage> {
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => AuthPage()));
                   },
-                  icon: Icon(
-                    Icons.person,
-                    color: Colors.black,
-                  )),
+                  icon: Iconify(Uiw.user)),
             ],
             title: Image.asset("images/group2_blue.png", scale: 1.3,)
           ),
@@ -92,7 +91,7 @@ class _IndexPageState extends State<IndexPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.flag),
-            label: "Flag",
+            label: "Tour",
           ),
         ],
       ),

@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:gofere_travels/widgets/special_offer_container.dart';
+import 'package:gofere_travels/data/special_offers.dart';
 
 class SpecialOffers extends StatefulWidget {
   const SpecialOffers({Key? key}) : super(key: key);
@@ -21,29 +22,47 @@ class _SpecialOffersState extends State<SpecialOffers> {
           Center(
             child: Container(
               margin: EdgeInsets.only(top: 30),
-              child: Text("Special Offers",
+              child: Text(
+                "Special Offers",
                 style: TextStyle(
                     fontSize: 40,
                     color: Colors.black,
-                    fontWeight: FontWeight.w500
-                ),
+                    fontWeight: FontWeight.w500),
                 textAlign: TextAlign.center,
               ),
             ),
           ),
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
           Container(
-            child: Text("Take memories, leave footprints, and plan your next trip with gofere travels.",
+            child: Text(
+              "Take memories, leave footprints, and plan your next trip with gofere travels.",
               style: TextStyle(
                 fontSize: 18,
                 color: Colors.black38,
               ),
-              textAlign: TextAlign.center,),
+              textAlign: TextAlign.center,
+            ),
           ),
-          SizedBox(height: 20,),
-          CarouselSlider.builder(itemCount: 3, itemBuilder: (context, index, realIndex) {
-            return SpecialOfferContainer(context, "Last Minute Deals", "Leave immediately with a discount", "images/hotel1.jpg", "Time to go");
-          }, options: CarouselOptions(height: 400, autoPlay: true, autoPlayInterval: Duration(seconds: 2))),
+          SizedBox(
+            height: 20,
+          ),
+          CarouselSlider.builder(
+              itemCount: specialOffers.length,
+              itemBuilder: (context, index, realIndex) {
+                return SpecialOfferContainer(
+                  context,
+                  specialOffers[index]["text2"],
+                  specialOffers[index]["text1"],
+                  specialOffers[index]["imageUrl"],
+                  specialOffers[index]["text3"],
+                );
+              },
+              options: CarouselOptions(
+                  height: 400,
+                  autoPlay: true,
+                  autoPlayInterval: Duration(seconds: 2))),
         ],
       ),
     );

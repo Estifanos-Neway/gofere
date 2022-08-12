@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gofere_travels/data/top_destinations.dart';
 import 'package:gofere_travels/widgets/topDestinationContainer.dart';
 
 class TopDestinationPage extends StatefulWidget {
@@ -19,23 +20,33 @@ class _TopDestinationPageState extends State<TopDestinationPage> {
           Center(
             child: Container(
               margin: EdgeInsets.only(top: 20),
-              child: Text("Top destinations",
+              child: Text(
+                "Top destinations",
                 style: TextStyle(
                     fontSize: 30,
                     color: Colors.black,
-                    fontWeight: FontWeight.w500
-                ),
+                    fontWeight: FontWeight.w500),
                 textAlign: TextAlign.center,
               ),
             ),
           ),
-          SizedBox(height: 30,),
+          SizedBox(
+            height: 30,
+          ),
           ListView.builder(
-              itemCount: 5,
+              itemCount: topDestinations.length,
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {
-                return TopDestinationContainer(context, "Addis Ababa", "1 Tour", "5 Hotels", "10 Cars", "20 Rentals", "images/place1.jpg");
+                Map<String, dynamic> topDestination = topDestinations[index];
+                return TopDestinationContainer(
+                    context,
+                    topDestination["name"],
+                    "${topDestination["tourCount"]} Tours",
+                    "${topDestination["hotelCount"]} Hotels",
+                    "${topDestination["carRentalCount"]} Cars",
+                    "${topDestination["rentalCount"]} Rentals",
+                    topDestination["imageUrl"],);
               }),
         ],
       ),

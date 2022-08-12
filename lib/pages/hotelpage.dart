@@ -36,7 +36,7 @@ class _HotelPageState extends State<HotelPage> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 15,),
+                  SizedBox(height: 15,), 
                   GridView.builder(
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
                         childAspectRatio: (180 / 320),),

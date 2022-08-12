@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gofere_travels/widgets/recommendedContainer.dart';
+import 'package:gofere_travels/widgets/recommendedCarContainer.dart';
+import 'package:gofere_travels/widgets/recommendedTourContainer.dart';
 
 class RecommendedForYou extends StatefulWidget {
   const RecommendedForYou({Key? key}) : super(key: key);
@@ -58,21 +59,8 @@ class _RecommendedForYouState extends State<RecommendedForYou> {
                         // side: BorderSide(color: Colors.black, width: 0.2)
                       )
                   ),
+
                   child: Text("Tour", style: TextStyle(
-                      fontSize: 16
-                  ),),
-                ),
-                ElevatedButton(
-                  onPressed: (){},
-                  style: ElevatedButton.styleFrom(
-                      primary: Colors.white,
-                      onPrimary: Colors.black87,
-                      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8)
-                      )
-                  ),
-                  child: Text("Rental", style: TextStyle(
                       fontSize: 16
                   ),),
                 ),
@@ -90,6 +78,20 @@ class _RecommendedForYouState extends State<RecommendedForYou> {
                       fontSize: 16
                   ),),
                 ),
+                ElevatedButton(
+                  onPressed: (){},
+                  style: ElevatedButton.styleFrom(
+                      primary: Colors.white,
+                      onPrimary: Colors.black87,
+                      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8)
+                      )
+                  ),
+                  child: Text("Rental", style: TextStyle(
+                      fontSize: 16
+                  ),),
+                ),
               ],
             ),
           ),
@@ -104,7 +106,7 @@ class _RecommendedForYouState extends State<RecommendedForYou> {
                 itemBuilder: (context, index){
                   return Container(
                       width: 300,
-                      child: RecommendedContainer(context));
+                      child: RecommendedCarContainer(context));
                 }),
           ),
         ],

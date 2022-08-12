@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/zondicons.dart';
 
-Widget RecommendedContainer(BuildContext context) {
+Widget RecommendedTourContainer(BuildContext context) {
   return Container(
     width: MediaQuery.of(context).size.width,
     height: 350,

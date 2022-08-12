@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:gofere_travels/data/top_destinations.dart';
 import 'package:gofere_travels/widgets/homeFirst.dart';
-import 'package:gofere_travels/widgets/recommendedContainer.dart';
+import 'package:gofere_travels/widgets/recommendedTourContainer.dart';
 import 'package:gofere_travels/widgets/recommendedForYou.dart';
 import 'package:gofere_travels/widgets/specialOffers.dart';
 import 'package:gofere_travels/widgets/special_offer_container.dart';

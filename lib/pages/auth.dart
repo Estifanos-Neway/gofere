@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:colorful_iconify_flutter/icons/logos.dart';
+import 'package:gofere_travels/widgets/otherPlatformAccount.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({Key? key}) : super(key: key);
@@ -113,8 +114,7 @@ class _AuthPageState extends State<AuthPage> {
                                   style: TextStyle(fontWeight: FontWeight.w300),
                                 ),
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor:
-                                      Color.fromARGB(255, 2, 120, 217),
+                                  primary: Color.fromARGB(255, 2, 120, 217),
                                   padding: EdgeInsets.symmetric(vertical: 18),
                                   elevation: 0,
                                   shape: RoundedRectangleBorder(

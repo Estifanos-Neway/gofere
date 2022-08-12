@@ -21,8 +21,8 @@ Widget OtherPlatfomr(String name, Widget icon) {
         ],
       ),
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.transparent,
-        foregroundColor: Colors.black,
+        primary: Colors.transparent,
+        onPrimary: Colors.black,
         padding: EdgeInsets.symmetric(
           vertical: 20,
           horizontal: 30,

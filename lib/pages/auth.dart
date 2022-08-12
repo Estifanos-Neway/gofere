@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:iconify_flutter/iconify_flutter.dart';
+import 'package:colorful_iconify_flutter/icons/logos.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({Key? key}) : super(key: key);
@@ -11,6 +13,22 @@ class _AuthPageState extends State<AuthPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        title: Text(
+          "Join Gofere",
+          style: TextStyle(
+            fontSize: 16,
+            color: Color.fromARGB(255, 46, 46, 46),
+          ),
+        ),
+        iconTheme: IconThemeData(
+          color: Color.fromARGB(255, 46, 46, 46),
+        ),
+        foregroundColor: Colors.black,
+        centerTitle: true,
+      ),
       body: Container(
         child:
             Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: <
@@ -32,7 +50,7 @@ class _AuthPageState extends State<AuthPage> {
                   ),
                 ),
                 Container(
-                  height: 400, //height of TabBarView
+                  height: 1800, //height of TabBarView
                   decoration: BoxDecoration(
                     border: Border(
                       top: BorderSide(
@@ -137,7 +155,7 @@ class _AuthPageState extends State<AuthPage> {
                               height: 40,
                             ),
                             Row(
-                              children: <Widget>[
+                              children: [
                                 Expanded(
                                   child: Divider(),
                                 ),
@@ -154,14 +172,14 @@ class _AuthPageState extends State<AuthPage> {
                             SizedBox(
                               height: 40,
                             ),
-                            
+                            // OtherPlatf
                           ],
                         ),
                       ),
                       Container(
                         child: Center(
                           child: Text(
-                            'Display Tab 2',
+                            'Sign up',
                             style: TextStyle(
                               fontSize: 22,
                               fontWeight: FontWeight.bold,

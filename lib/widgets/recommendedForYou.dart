@@ -101,6 +101,7 @@ class _RecommendedForYouState extends State<RecommendedForYou> {
       },
     ),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -110,15 +111,29 @@ class _RecommendedForYouState extends State<RecommendedForYou> {
         children: [
           Center(
             child: Container(
-              margin: EdgeInsets.only(top: 10, left: 20, right: 20),
+              margin: EdgeInsets.only(top: 50, left: 20, right: 20),
               child: Text(
                 "Recommended for you",
                 style: TextStyle(
-                    fontSize: 35,
+                    fontSize: 25,
                     color: Colors.black87,
                     fontWeight: FontWeight.w500),
                 textAlign: TextAlign.center,
               ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 5),
+            child: Text(
+              "Take memories, leave footprints, and plan your next trip with gofere travels.",
+              style: TextStyle(
+                fontSize: 15,
+                color: Colors.black45,
+              ),
+              textAlign: TextAlign.center,
             ),
           ),
           SizedBox(

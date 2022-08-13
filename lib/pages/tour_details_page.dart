@@ -96,7 +96,7 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                 ],
                 title: Image.asset(
                   "images/logo_small.png",
-                  scale: 8.3,
+                  scale: 22,
                 )),
           ),
         ),
@@ -185,19 +185,19 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                           ),
                         ],
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: 10),
-                        child: Text(
-                          name,
-                          style: TextStyle(
-                              fontSize: 15,
-                              color: Colors.white60,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ),
+                      // SizedBox(
+                      //   height: 10,
+                      // ),
+                      // Container(
+                      //   margin: EdgeInsets.only(left: 10),
+                      //   child: Text(
+                      //     name,
+                      //     style: TextStyle(
+                      //         fontSize: 15,
+                      //         color: Colors.white60,
+                      //         fontWeight: FontWeight.w500),
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),
@@ -210,7 +210,7 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                       Text(
                         name,
                         style: TextStyle(
-                            fontSize: 30,
+                            fontSize: 23,
                             color: Colors.black,
                             fontWeight: FontWeight.bold),
                       ),
@@ -250,7 +250,7 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 20, right: 10, left: 10),
+                        margin: EdgeInsets.only(top: 20, right: 10, left: 10, bottom: 30),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -265,7 +265,7 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                                           MainAxisAlignment.start,
                                       children: [
                                         Container(
-                                          padding: EdgeInsets.all(8),
+                                          padding: EdgeInsets.all(6),
                                           decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(8),
@@ -274,7 +274,7 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                                           ),
                                           child: Iconify(
                                             Ic.outline_watch_later,
-                                            size: 25,
+                                            size: 20,
                                             color: Colors.black54,
                                           ),
                                         ),
@@ -289,12 +289,12 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                                               "Duration",
                                               style: TextStyle(
                                                   color: Colors.black,
-                                                  fontSize: 18),
+                                                  fontSize: 15),
                                             ),
                                             Text("6 hours",
                                                 style: TextStyle(
                                                     color: Colors.black54,
-                                                    fontSize: 15))
+                                                    fontSize: 12))
                                           ],
                                         )
                                       ],
@@ -306,7 +306,7 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                                   Row(
                                     children: [
                                       Container(
-                                        padding: EdgeInsets.all(8),
+                                        padding: EdgeInsets.all(6),
                                         decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(8),
@@ -315,7 +315,7 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                                         ),
                                         child: Iconify(
                                           Uil.users_alt,
-                                          size: 25,
+                                          size: 20,
                                           color: Colors.black54,
                                         ),
                                       ),
@@ -330,12 +330,12 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                                             "Group Size",
                                             style: TextStyle(
                                                 color: Colors.black,
-                                                fontSize: 18),
+                                                fontSize: 15),
                                           ),
                                           Text("6 people",
                                               style: TextStyle(
                                                   color: Colors.black54,
-                                                  fontSize: 15))
+                                                  fontSize: 12))
                                         ],
                                       )
                                     ],
@@ -344,13 +344,14 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                               ),
                             ),
                             Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
                                   margin: EdgeInsets.only(right: 10),
                                   child: Row(
                                     children: [
                                       Container(
-                                        padding: EdgeInsets.all(8),
+                                        padding: EdgeInsets.all(6),
                                         decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(8),
@@ -359,7 +360,7 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                                         ),
                                         child: Iconify(
                                           Ion.footsteps_outline,
-                                          size: 25,
+                                          size: 20,
                                           color: Colors.black54,
                                         ),
                                       ),
@@ -374,12 +375,12 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                                             "Tour Type",
                                             style: TextStyle(
                                                 color: Colors.black,
-                                                fontSize: 18),
+                                                fontSize: 15),
                                           ),
                                           Text("Daily Tour",
                                               style: TextStyle(
                                                   color: Colors.black54,
-                                                  fontSize: 15))
+                                                  fontSize: 12))
                                         ],
                                       )
                                     ],
@@ -392,7 +393,7 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Container(
-                                      padding: EdgeInsets.all(8),
+                                      padding: EdgeInsets.all(6),
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(8),
                                         border:
@@ -400,7 +401,7 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                                       ),
                                       child: Iconify(
                                         Cil.language,
-                                        size: 25,
+                                        size: 20,
                                         color: Colors.black54,
                                       ),
                                     ),
@@ -415,24 +416,24 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                                           "Languages",
                                           style: TextStyle(
                                               color: Colors.black,
-                                              fontSize: 18),
+                                              fontSize: 15),
                                         ),
-                                        Text("Amharic,",
+                                        Text("Amharic, English,",
                                             style: TextStyle(
                                                 color: Colors.black54,
-                                                fontSize: 15)),
-                                        Text("English,",
+                                                fontSize: 12)),
+                                        // Text("English,",
+                                        //     style: TextStyle(
+                                        //         color: Colors.black54,
+                                        //         fontSize: 12)),
+                                        Text("Francais, Oromifa",
                                             style: TextStyle(
                                                 color: Colors.black54,
-                                                fontSize: 15)),
-                                        Text("Francais,",
-                                            style: TextStyle(
-                                                color: Colors.black54,
-                                                fontSize: 15)),
-                                        Text("Oromifa,",
-                                            style: TextStyle(
-                                                color: Colors.black54,
-                                                fontSize: 15)),
+                                                fontSize: 12)),
+                                        // Text("Oromifa,",
+                                        //     style: TextStyle(
+                                        //         color: Colors.black54,
+                                        //         fontSize: 12)),
                                       ],
                                     )
                                   ],
@@ -573,7 +574,7 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                               style: TextStyle(
                                   fontSize: 16,
                                   color: Colors.black54,
-                                  fontWeight: FontWeight.w500),
+                                  fontWeight: FontWeight.w400),
                               textAlign: TextAlign.justify,
                             ),
                             SizedBox(

@@ -25,7 +25,7 @@ class _SpecialOffersState extends State<SpecialOffers> {
               child: Text(
                 "Special Offers",
                 style: TextStyle(
-                    fontSize: 40,
+                    fontSize: 25,
                     color: Colors.black,
                     fontWeight: FontWeight.w500),
                 textAlign: TextAlign.center,
@@ -36,11 +36,12 @@ class _SpecialOffersState extends State<SpecialOffers> {
             height: 10,
           ),
           Container(
+            padding: EdgeInsets.symmetric(horizontal: 5),
             child: Text(
               "Take memories, leave footprints, and plan your next trip with gofere travels.",
               style: TextStyle(
-                fontSize: 18,
-                color: Colors.black38,
+                fontSize: 15,
+                color: Colors.black45,
               ),
               textAlign: TextAlign.center,
             ),
@@ -61,6 +62,7 @@ class _SpecialOffersState extends State<SpecialOffers> {
               },
               options: CarouselOptions(
                   height: 400,
+                  enlargeCenterPage: true,
                   autoPlay: true,
                   autoPlayInterval: Duration(seconds: 2))),
         ],

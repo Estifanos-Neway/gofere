@@ -19,11 +19,10 @@ class _TopDestinationPageState extends State<TopDestinationPage> {
         children: [
           Center(
             child: Container(
-              margin: EdgeInsets.only(top: 20),
               child: Text(
                 "Top destinations",
                 style: TextStyle(
-                    fontSize: 30,
+                    fontSize: 25,
                     color: Colors.black,
                     fontWeight: FontWeight.w500),
                 textAlign: TextAlign.center,
@@ -31,7 +30,21 @@ class _TopDestinationPageState extends State<TopDestinationPage> {
             ),
           ),
           SizedBox(
-            height: 30,
+            height: 10,
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 5),
+            child: Text(
+              "Take memories, leave footprints, and plan your next trip with gofere travels.",
+              style: TextStyle(
+                fontSize: 15,
+                color: Colors.black45,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          SizedBox(
+            height: 20,
           ),
           ListView.builder(
               itemCount: topDestinations.length,
@@ -40,13 +53,14 @@ class _TopDestinationPageState extends State<TopDestinationPage> {
               itemBuilder: (context, index) {
                 Map<String, dynamic> topDestination = topDestinations[index];
                 return TopDestinationContainer(
-                    context,
-                    topDestination["name"],
-                    "${topDestination["tourCount"]} Tours",
-                    "${topDestination["hotelCount"]} Hotels",
-                    "${topDestination["carRentalCount"]} Cars",
-                    "${topDestination["rentalCount"]} Rentals",
-                    topDestination["imageUrl"],);
+                  context,
+                  topDestination["name"],
+                  "${topDestination["tourCount"]} Tours",
+                  "${topDestination["hotelCount"]} Hotels",
+                  "${topDestination["carRentalCount"]} Cars",
+                  "${topDestination["rentalCount"]} Rentals",
+                  topDestination["imageUrl"],
+                );
               }),
         ],
       ),

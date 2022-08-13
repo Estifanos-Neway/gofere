@@ -120,7 +120,7 @@ class _HomeFirstState extends State<HomeFirst> {
                         });
                       },
                       child: Text(
-                        "Car Rental",
+                        "Car",
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,

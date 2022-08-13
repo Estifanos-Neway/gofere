@@ -19,18 +19,18 @@ Widget CarsVerticalContainer(
     ) {
   return Container(
     width: MediaQuery.of(context).size.width,
-    height: 350,
-    margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+    height: 390,
+    margin: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
     decoration: BoxDecoration(
       color: Colors.white,
-      borderRadius: BorderRadius.all(Radius.circular(12)),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.grey,
-          offset: Offset(0.0, 1.0), //(x,y)
-          blurRadius: 2.0,
-        ),
-      ],
+      // borderRadius: BorderRadius.all(Radius.circular(12)),
+      // boxShadow: [
+      //   BoxShadow(
+      //     color: Colors.grey,
+      //     offset: Offset(0.0, 1.0), //(x,y)
+      //     blurRadius: 2.0,
+      //   ),
+      // ],
     ),
     child: Stack(
       children: [
@@ -38,18 +38,19 @@ Widget CarsVerticalContainer(
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
-              height: 170,
-              margin: EdgeInsets.all(8),
+              height: 200,
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(imageUrl), fit: BoxFit.cover),
-                  borderRadius: BorderRadius.circular(12)),
+                  // borderRadius: BorderRadius.circular(12)
+              ),
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: 125,
                 decoration: BoxDecoration(
                     color: Colors.black.withOpacity(0.3),
-                    borderRadius: BorderRadius.circular(12)),
+                    // borderRadius: BorderRadius.circular(12)
+                ),
                 padding: EdgeInsets.only(top: 2, right: 2),
                 child: Align(
                     alignment: Alignment.topRight,
@@ -66,7 +67,7 @@ Widget CarsVerticalContainer(
               height: 5,
             ),
             Container(
-              margin: EdgeInsets.only(left: 10, right: 10),
+              margin: EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -171,7 +172,7 @@ Widget CarsVerticalContainer(
                     color: Colors.grey,
                   ),
                   SizedBox(
-                    height: 15,
+                    height: 5,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -194,6 +195,10 @@ Widget CarsVerticalContainer(
                       ),
                     ],
                   ),
+                  SizedBox(height: 5,),
+                  Divider(
+                    color: Colors.grey,
+                  ),
                 ],
               ),
             ),
@@ -202,7 +207,7 @@ Widget CarsVerticalContainer(
         Align(
           alignment: Alignment.centerRight,
           child: Container(
-            margin: EdgeInsets.only(bottom: 75, right: 15),
+            margin: EdgeInsets.only(bottom: 55, right: 15),
             child: Icon(
               Icons.account_circle_rounded,
               size: 30,

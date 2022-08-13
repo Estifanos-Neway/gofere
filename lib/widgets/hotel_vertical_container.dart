@@ -13,7 +13,7 @@ Widget HotelVerticalContainer(
     String ratingTag) {
   return Container(
     width: MediaQuery.of(context).size.width,
-    height: 390,
+    height: 420,
     margin: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
     decoration: BoxDecoration(
       color: Colors.white,
@@ -32,7 +32,7 @@ Widget HotelVerticalContainer(
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
-              height: 170,
+              height: 200,
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(imageUrl), fit: BoxFit.cover),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gofere_travels/data/locations.dart';
 
 class TourCheckIn extends StatefulWidget {
   const TourCheckIn({Key? key}) : super(key: key);
@@ -9,7 +10,6 @@ class TourCheckIn extends StatefulWidget {
 
 class _TourCheckInState extends State<TourCheckIn> {
 
-  List<String> locations = ["Addis Ababa", "Adama"];
   String? value;
   String checker = '';
 
@@ -20,7 +20,7 @@ class _TourCheckInState extends State<TourCheckIn> {
         Container(
           width: double.infinity,
           alignment: Alignment.center,
-          padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+          padding: EdgeInsets.fromLTRB(20, 15, 0, 5),
           child: DropdownButtonHideUnderline(
             child: DropdownButton<String>(
               icon: Visibility(visible: false, child: Icon(Icons.arrow_downward)),
@@ -32,21 +32,23 @@ class _TourCheckInState extends State<TourCheckIn> {
                   SizedBox(width: 10,),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text("Location", style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 17,
                           fontWeight: FontWeight.w500,
                           color: Colors.black
                       ),),
                       SizedBox(height: 2,),
                       Text("Where are you going?", style: TextStyle(
-                          color: Colors.black38
+                          color: Colors.black38,
+                        fontSize: 14
                       ),)
                     ],
                   ),
                 ],
               ),
-              items: locations.map(buildMenuLocation).toList(),
+              items: Locations.locations.map(buildMenuLocation).toList(),
               onChanged: (value) => setState(() {
                 this.value = value;
                 checker = value!;
@@ -59,6 +61,7 @@ class _TourCheckInState extends State<TourCheckIn> {
         ),
         Container(
           width: MediaQuery.of(context).size.width,
+          margin: EdgeInsets.only(left: 10),
           child: IntrinsicHeight(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -79,7 +82,7 @@ class _TourCheckInState extends State<TourCheckIn> {
                         Text("Check in", style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.w500,
-                            fontSize: 16
+                            fontSize: 14
                         ),)
                       ],
                     ),
@@ -98,6 +101,7 @@ class _TourCheckInState extends State<TourCheckIn> {
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(width: 10,),
                         Icon(Icons.calendar_month, color: Colors.black38,),
@@ -105,7 +109,7 @@ class _TourCheckInState extends State<TourCheckIn> {
                         Text("Check out", style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.w500,
-                            fontSize: 16
+                            fontSize: 14
                         ),)
                       ],
                     ),
@@ -118,7 +122,7 @@ class _TourCheckInState extends State<TourCheckIn> {
             ),
           ),
         ),
-        SizedBox(height: 10,),
+        SizedBox(height: 25,),
         Container(
           width: MediaQuery.of(context).size.width,
           child: ElevatedButton(
@@ -126,10 +130,10 @@ class _TourCheckInState extends State<TourCheckIn> {
               elevation: 0.0,
               padding: EdgeInsets.symmetric(vertical: 15),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),),
+                borderRadius: BorderRadius.vertical(bottom: Radius.circular(8)),),
             ),
             child: Text("Search", style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
                 fontWeight: FontWeight.w500
             ),),
             onPressed: () {
@@ -145,8 +149,8 @@ class _TourCheckInState extends State<TourCheckIn> {
     child: Text(
       location,
       style: TextStyle(
-        color: Colors.grey,
-        fontSize: 18,
+        color: Colors.black,
+        fontSize: 14,
         fontFamily: 'Nunito',
         letterSpacing: 0.3,
       ),

@@ -20,6 +20,7 @@ class _HomeFirstState extends State<HomeFirst> {
     RentalCheckIn(),
     CarRentalCheckIn(),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -51,14 +52,14 @@ class _HomeFirstState extends State<HomeFirst> {
                 child: Text(
                   "Get the best prices on 20,000+ trips, hotels, cars and properties, in Ethiopia.",
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 16,
                       color: Colors.white,
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.w500),
                   textAlign: TextAlign.center,
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 30,
               ),
               Container(
                 child: Row(
@@ -73,12 +74,10 @@ class _HomeFirstState extends State<HomeFirst> {
                       child: Text(
                         "Tours",
                         style: TextStyle(
-                            decoration: current == 0
-                                ? TextDecoration.underline
-                                : TextDecoration.none,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: current == 0 ? Colors.blue : Colors.white,
+                        ),
                       ),
                     ),
                     TextButton(
@@ -90,12 +89,13 @@ class _HomeFirstState extends State<HomeFirst> {
                       child: Text(
                         "Hotel",
                         style: TextStyle(
-                            decoration: current == 1
-                                ? TextDecoration.underline
-                                : TextDecoration.none,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
+                          // decoration: current == 1
+                          //     ? TextDecoration.underline
+                          //     : TextDecoration.none,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: current == 1 ? Colors.blue : Colors.white,
+                        ),
                       ),
                     ),
                     TextButton(
@@ -107,12 +107,10 @@ class _HomeFirstState extends State<HomeFirst> {
                       child: Text(
                         "Rental",
                         style: TextStyle(
-                            decoration: current == 2
-                                ? TextDecoration.underline
-                                : TextDecoration.none,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: current == 2 ? Colors.blue : Colors.white,
+                        ),
                       ),
                     ),
                     TextButton(
@@ -124,12 +122,10 @@ class _HomeFirstState extends State<HomeFirst> {
                       child: Text(
                         "Car Rental",
                         style: TextStyle(
-                            decoration: current == 3
-                                ? TextDecoration.underline
-                                : TextDecoration.none,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: current == 3 ? Colors.blue : Colors.white,
+                        ),
                       ),
                     ),
                   ],

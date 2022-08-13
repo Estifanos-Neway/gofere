@@ -68,7 +68,7 @@ class _IndexPageState extends State<IndexPage> {
               ],
               title: Image.asset(
                 "images/logo_small.png",
-                scale: 8.3,
+                scale: 18.3,
               )),
         ),
       ),

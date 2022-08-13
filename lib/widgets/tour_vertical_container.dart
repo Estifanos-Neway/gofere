@@ -4,15 +4,15 @@ import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/zondicons.dart';
 
 Widget TourVerticalContainer(
-    BuildContext context,
-    String name,
-    String imageUrl,
-    String location,
-    double starCount,
-    int reviewCount,
-    String price,
-    String duration,
-    ) {
+  BuildContext context,
+  String name,
+  String imageUrl,
+  String location,
+  double starCount,
+  int reviewCount,
+  String price,
+  String duration,
+) {
   return Container(
     width: MediaQuery.of(context).size.width,
     height: 410,
@@ -34,23 +34,31 @@ Widget TourVerticalContainer(
           children: [
             GestureDetector(
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => TourDetailsPage()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => TourDetailsPage(
+                              name,
+                              imageUrl,
+                              location,
+                              starCount,
+                              reviewCount,
+                            )));
               },
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: 200,
                 decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage(imageUrl), fit: BoxFit.cover),
-                    // borderRadius: BorderRadius.vertical(top: Radius.circular(12))
+                  image: DecorationImage(
+                      image: AssetImage(imageUrl), fit: BoxFit.cover),
+                  // borderRadius: BorderRadius.vertical(top: Radius.circular(12))
                 ),
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   height: 125,
                   decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.3),
-                      // borderRadius: BorderRadius.vertical(top: Radius.circular(12))
+                    color: Colors.black.withOpacity(0.3),
+                    // borderRadius: BorderRadius.vertical(top: Radius.circular(12))
                   ),
                   padding: EdgeInsets.only(top: 2, right: 2),
                   child: Align(
@@ -103,7 +111,13 @@ Widget TourVerticalContainer(
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => TourDetailsPage()));
+                              builder: (context) => TourDetailsPage(
+                                    name,
+                                    imageUrl,
+                                    location,
+                                    starCount,
+                                    reviewCount,
+                                  )));
                     },
                     child: Container(
                       child: Text(
@@ -150,7 +164,7 @@ Widget TourVerticalContainer(
                           Text(
                             "From ",
                             style:
-                            TextStyle(color: Colors.black54, fontSize: 15),
+                                TextStyle(color: Colors.black54, fontSize: 15),
                           ),
                           Text(
                             price,
@@ -167,7 +181,7 @@ Widget TourVerticalContainer(
                           Text(
                             " $duration",
                             style:
-                            TextStyle(color: Colors.black54, fontSize: 15),
+                                TextStyle(color: Colors.black54, fontSize: 15),
                           ),
                           SizedBox(
                             width: 10,
@@ -187,14 +201,14 @@ Widget TourVerticalContainer(
         // Align(
         //   alignment: Alignment.centerRight,
         //   child:
-          Container(
-            margin: EdgeInsets.only(top: 15, left: 5),
-            child: Icon(
-              Icons.account_circle_rounded,
-              size: 30,
-              color: Colors.white,
-            ),
+        Container(
+          margin: EdgeInsets.only(top: 15, left: 5),
+          child: Icon(
+            Icons.account_circle_rounded,
+            size: 30,
+            color: Colors.white,
           ),
+        ),
         // ),
       ],
     ),

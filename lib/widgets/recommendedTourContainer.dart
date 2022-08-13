@@ -34,8 +34,16 @@ Widget RecommendedTourContainer(
           children: [
             GestureDetector(
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => TourDetailsPage()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => TourDetailsPage(
+                              name,
+                              imageUrl,
+                              location,
+                              starCount,
+                              reviewCount,
+                            )));
               },
               child: Container(
                 width: MediaQuery.of(context).size.width,
@@ -103,7 +111,13 @@ Widget RecommendedTourContainer(
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => TourDetailsPage()));
+                              builder: (context) => TourDetailsPage(
+                                    name,
+                                    imageUrl,
+                                    location,
+                                    starCount,
+                                    reviewCount,
+                                  )));
                     },
                     child: Container(
                       child: Text(

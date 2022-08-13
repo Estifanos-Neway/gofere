@@ -171,91 +171,100 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              Container(
-                                padding: EdgeInsets.all(8),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(color: Colors.black54),
-                                ),
-                                child: Iconify(Ic.outline_watch_later, size: 25, color: Colors.black54,),
-                              ),
-                              SizedBox(width: 10,),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                      Container(
+                        child: Column(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(right: 15),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Text("Duration", style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 18
-                                  ),),
-                                  Text("6 hours", style: TextStyle(
-                                      color: Colors.black54,
-                                      fontSize: 15
-                                  ))
+                                  Container(
+                                    padding: EdgeInsets.all(8),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8),
+                                      border: Border.all(color: Colors.black54),
+                                    ),
+                                    child: Iconify(Ic.outline_watch_later, size: 25, color: Colors.black54,),
+                                  ),
+                                  SizedBox(width: 10,),
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text("Duration", style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 18
+                                      ),),
+                                      Text("6 hours", style: TextStyle(
+                                          color: Colors.black54,
+                                          fontSize: 15
+                                      ))
+                                    ],
+                                  )
                                 ],
-                              )
-                            ],
-                          ),
-                          SizedBox(height: 15,),
-                          Row(
-                            children: [
-                              Container(
-                                padding: EdgeInsets.all(8),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(color: Colors.black54),
-                                ),
-                                child: Iconify(Uil.users_alt, size: 25, color: Colors.black54,),
                               ),
-                              SizedBox(width: 10,),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text("Group Size", style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 18
-                                  ),),
-                                  Text("6 people", style: TextStyle(
-                                      color: Colors.black54,
-                                      fontSize: 15
-                                  ))
-                                ],
-                              )
-                            ],
-                          )
-                        ],
+                            ),
+                            SizedBox(height: 15,),
+                            Row(
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.all(8),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(color: Colors.black54),
+                                  ),
+                                  child: Iconify(Uil.users_alt, size: 25, color: Colors.black54,),
+                                ),
+                                SizedBox(width: 10,),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("Group Size", style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 18
+                                    ),),
+                                    Text("6 people", style: TextStyle(
+                                        color: Colors.black54,
+                                        fontSize: 15
+                                    ))
+                                  ],
+                                )
+                              ],
+                            )
+                          ],
+                        ),
                       ),
                       Column(
                         children: [
-                          Row(
-                            children: [
-                              Container(
-                                padding: EdgeInsets.all(8),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(color: Colors.black54),
-                                ),
+                          Container(
+                            margin: EdgeInsets.only(right: 10),
+                            child: Row(
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.all(8),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(color: Colors.black54),
+                                  ),
 
-                                child: Iconify(Ion.footsteps_outline, size: 25, color: Colors.black54,),
-                              ),
-                              SizedBox(width: 10,),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text("Tour Type", style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 18
-                                  ),),
-                                  Text("Daily Tour", style: TextStyle(
-                                      color: Colors.black54,
-                                      fontSize: 15
-                                  ))
-                                ],
-                              )
-                            ],
+                                  child: Iconify(Ion.footsteps_outline, size: 25, color: Colors.black54,),
+                                ),
+                                SizedBox(width: 10,),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("Tour Type", style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 18
+                                    ),),
+                                    Text("Daily Tour", style: TextStyle(
+                                        color: Colors.black54,
+                                        fontSize: 15
+                                    ))
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
                           SizedBox(height: 15,),
                           Row(

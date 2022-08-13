@@ -46,7 +46,7 @@ List<Map<String, dynamic>> tours = [
   },
   {
     "name":
-        "DAY TRIP TO Debre Libanos Monastery Cave Church Nature and Wildlife",
+        "DAY TRIP TO Debre Libanos Monastery Cave Church",
     "imageUrl": "images/t6.jpg",
     "location": "Debre Libanos Monastery Cave Church",
     "reviewCount": 5,

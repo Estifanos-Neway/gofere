@@ -3,30 +3,30 @@ import 'package:gofere_travels/pages/tour_details_page.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/zondicons.dart';
 
-Widget RecommendedTourContainer(
-  BuildContext context,
-  String name,
-  String imageUrl,
-  String location,
-  double starCount,
-  int reviewCount,
-  String price,
-  String duration,
-) {
+Widget TourVerticalContainer(
+    BuildContext context,
+    String name,
+    String imageUrl,
+    String location,
+    double starCount,
+    int reviewCount,
+    String price,
+    String duration,
+    ) {
   return Container(
     width: MediaQuery.of(context).size.width,
-    height: 350,
-    margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+    height: 410,
+    margin: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
     decoration: BoxDecoration(
       color: Colors.white,
-      borderRadius: BorderRadius.all(Radius.circular(12)),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.grey,
-          offset: Offset(0.0, 1.0), //(x,y)
-          blurRadius: 2.0,
-        ),
-      ],
+      // borderRadius: BorderRadius.all(Radius.circular(12)),
+      // boxShadow: [
+      //   BoxShadow(
+      //     color: Colors.grey,
+      //     offset: Offset(0.0, 1.0), //(x,y)
+      //     blurRadius: 2.0,
+      //   ),
+      // ],
     ),
     child: Stack(
       children: [
@@ -39,19 +39,19 @@ Widget RecommendedTourContainer(
               },
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                height: 170,
+                height: 200,
                 decoration: BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage(imageUrl), fit: BoxFit.cover),
-                    borderRadius:
-                        BorderRadius.vertical(top: Radius.circular(12))),
+                    // borderRadius: BorderRadius.vertical(top: Radius.circular(12))
+                ),
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   height: 125,
                   decoration: BoxDecoration(
                       color: Colors.black.withOpacity(0.3),
-                      borderRadius:
-                          BorderRadius.vertical(top: Radius.circular(12))),
+                      // borderRadius: BorderRadius.vertical(top: Radius.circular(12))
+                  ),
                   padding: EdgeInsets.only(top: 2, right: 2),
                   child: Align(
                       alignment: Alignment.topRight,
@@ -69,7 +69,7 @@ Widget RecommendedTourContainer(
               height: 10,
             ),
             Container(
-              margin: EdgeInsets.only(left: 10),
+              margin: EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -142,9 +142,6 @@ Widget RecommendedTourContainer(
                   Divider(
                     color: Colors.grey,
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -153,7 +150,7 @@ Widget RecommendedTourContainer(
                           Text(
                             "From ",
                             style:
-                                TextStyle(color: Colors.black54, fontSize: 15),
+                            TextStyle(color: Colors.black54, fontSize: 15),
                           ),
                           Text(
                             price,
@@ -170,7 +167,7 @@ Widget RecommendedTourContainer(
                           Text(
                             " $duration",
                             style:
-                                TextStyle(color: Colors.black54, fontSize: 15),
+                            TextStyle(color: Colors.black54, fontSize: 15),
                           ),
                           SizedBox(
                             width: 10,
@@ -179,22 +176,26 @@ Widget RecommendedTourContainer(
                       )
                     ],
                   ),
+                  Divider(
+                    color: Colors.grey,
+                  ),
                 ],
               ),
             ),
           ],
         ),
-        Align(
-          alignment: Alignment.centerRight,
-          child: Container(
-            margin: EdgeInsets.only(bottom: 85, right: 10),
+        // Align(
+        //   alignment: Alignment.centerRight,
+        //   child:
+          Container(
+            margin: EdgeInsets.only(top: 15, left: 5),
             child: Icon(
               Icons.account_circle_rounded,
               size: 30,
               color: Colors.white,
             ),
           ),
-        ),
+        // ),
       ],
     ),
   );

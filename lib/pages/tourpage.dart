@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gofere_travels/data/tours.dart';
+import 'package:gofere_travels/widgets/recommendedTourContainer.dart';
+import 'package:gofere_travels/widgets/tour_vertical_container.dart';
 import 'package:gofere_travels/widgets/tours_container.dart';
 
 class TourPage extends StatefulWidget {
@@ -20,45 +22,67 @@ class _TourPageState extends State<TourPage> {
               width: MediaQuery.of(context).size.width,
               color: Colors.white,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Center(
-                    child: Container(
-                      margin: EdgeInsets.only(top: 10, left: 20, right: 20),
+                  Container(
+                      margin: EdgeInsets.only(top: 30, left: 20, right: 20),
                       child: Text(
                         "Tours",
                         style: TextStyle(
-                            fontSize: 35,
+                            fontSize: 25,
                             color: Colors.black87,
                             fontWeight: FontWeight.w500),
-                        textAlign: TextAlign.center,
                       ),
                     ),
-                  ),
                   SizedBox(
                     height: 15,
                   ),
-                  GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        childAspectRatio: (180 / 320),
-                      ),
-                      itemCount: tours.length,
-                      physics: NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemBuilder: (context, index) {
-                        Map<String, dynamic> tour = tours[index];
-                        return Container(
-                            child: ToursContainer(
-                          context,
-                          tour["name"],
-                          tour["imageUrl"],
-                          tour["location"],
-                          tour["starCount"],
-                          tour["reviewCount"],
-                          tour["price"],
-                          tour["duration"],
-                        ));
-                      }),
+                  // GridView.builder(
+                  //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  //       crossAxisCount: 2,
+                  //       childAspectRatio: (180 / 325),
+                  //     ),
+                  //     itemCount: tours.length,
+                  //     physics: NeverScrollableScrollPhysics(),
+                  //     shrinkWrap: true,
+                  //     itemBuilder: (context, index) {
+                  //       Map<String, dynamic> tour = tours[index];
+                  //       return Container(
+                  //           child: ToursContainer(
+                  //         context,
+                  //         tour["name"],
+                  //         tour["imageUrl"],
+                  //         tour["location"],
+                  //         tour["starCount"],
+                  //         tour["reviewCount"],
+                  //         tour["price"],
+                  //         tour["duration"],
+                  //       ));
+                  //     }),
+                  ListView.builder(
+                        itemCount: tours.length,
+                        shrinkWrap: true,
+                        scrollDirection: Axis.vertical,
+                        physics: NeverScrollableScrollPhysics(),
+                        itemBuilder: (context, index){
+                      Map<String, dynamic> tour = tours[index];
+                      return Column(
+                        children: [
+                          Container(
+                              child: TourVerticalContainer(
+                                context,
+                                tour["name"],
+                                tour["imageUrl"],
+                                tour["location"],
+                                tour["starCount"],
+                                tour["reviewCount"],
+                                tour["price"],
+                                tour["duration"],
+                              )),
+                          // Divider(color: Colors.black,)
+                        ],
+                      );
+                    }),
                 ],
               ),
             ),

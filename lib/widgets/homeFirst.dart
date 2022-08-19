@@ -24,8 +24,9 @@ class _HomeFirstState extends State<HomeFirst> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height - 70,
+      // height: MediaQuery.of(context).size.height - 70,
       width: MediaQuery.of(context).size.width,
+      padding: EdgeInsets.only(bottom: 140),
       decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage("images/place1.jpg"), fit: BoxFit.cover)),

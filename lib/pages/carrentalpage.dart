@@ -25,12 +25,22 @@ class _CarRentalPageState extends State<CarRentalPage> {
                 children: [
                   Container(
                     margin: EdgeInsets.only(top: 30, left: 20, right: 20),
-                    child: Text(
-                      "Cars",
-                      style: TextStyle(
-                          fontSize: 25,
-                          color: Colors.black87,
-                          fontWeight: FontWeight.w500),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          "Cars",
+                          style: TextStyle(
+                              fontSize: 25,
+                              color: Colors.black87,
+                              fontWeight: FontWeight.w500),
+                        ),
+                        Text(
+                          "${cars.length} cars found",
+                          style: TextStyle(fontSize: 15, color: Colors.black45),
+                        ),
+                      ],
                     ),
                   ),
                   SizedBox(

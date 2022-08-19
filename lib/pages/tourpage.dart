@@ -25,15 +25,25 @@ class _TourPageState extends State<TourPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                      margin: EdgeInsets.only(top: 30, left: 20, right: 20),
-                      child: Text(
-                        "Tours",
-                        style: TextStyle(
-                            fontSize: 25,
-                            color: Colors.black87,
-                            fontWeight: FontWeight.w500),
-                      ),
+                    margin: EdgeInsets.only(top: 30, left: 20, right: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          "Tours",
+                          style: TextStyle(
+                              fontSize: 25,
+                              color: Colors.black87,
+                              fontWeight: FontWeight.w500),
+                        ),
+                        Text(
+                          "${tours.length} tours found",
+                          style: TextStyle(fontSize: 15, color: Colors.black45),
+                        ),
+                      ],
                     ),
+                  ),
                   SizedBox(
                     height: 15,
                   ),
@@ -60,29 +70,29 @@ class _TourPageState extends State<TourPage> {
                   //       ));
                   //     }),
                   ListView.builder(
-                        itemCount: tours.length,
-                        shrinkWrap: true,
-                        scrollDirection: Axis.vertical,
-                        physics: NeverScrollableScrollPhysics(),
-                        itemBuilder: (context, index){
-                      Map<String, dynamic> tour = tours[index];
-                      return Column(
-                        children: [
-                          Container(
-                              child: TourVerticalContainer(
-                                context,
-                                tour["name"],
-                                tour["imageUrl"],
-                                tour["location"],
-                                tour["starCount"],
-                                tour["reviewCount"],
-                                tour["price"],
-                                tour["duration"],
-                              )),
-                          // Divider(color: Colors.black,)
-                        ],
-                      );
-                    }),
+                      itemCount: tours.length,
+                      shrinkWrap: true,
+                      scrollDirection: Axis.vertical,
+                      physics: NeverScrollableScrollPhysics(),
+                      itemBuilder: (context, index) {
+                        Map<String, dynamic> tour = tours[index];
+                        return Column(
+                          children: [
+                            Container(
+                                child: TourVerticalContainer(
+                              context,
+                              tour["name"],
+                              tour["imageUrl"],
+                              tour["location"],
+                              tour["starCount"],
+                              tour["reviewCount"],
+                              tour["price"],
+                              tour["duration"],
+                            )),
+                            // Divider(color: Colors.black,)
+                          ],
+                        );
+                      }),
                 ],
               ),
             ),

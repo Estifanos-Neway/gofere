@@ -14,8 +14,9 @@ class _SpecialOffersState extends State<SpecialOffers> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height - 135,
+      // height: MediaQuery.of(context).size.height - 135,
       width: MediaQuery.of(context).size.width,
+      padding: EdgeInsets.only(top: 30, bottom: 70),
       color: Colors.white,
       child: Column(
         children: [

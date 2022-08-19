@@ -21,20 +21,34 @@ class _HotelPageState extends State<HotelPage> {
         child: Column(
           children: [
             Container(
-              width: MediaQuery.of(context).size.width,
+              width: MediaQuery
+                  .of(context)
+                  .size
+                  .width,
               color: Colors.white,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: 30, left: 20, right: 20),
-                    child: Text(
-                      "Hotels",
-                      style: TextStyle(
-                          fontSize: 25,
-                          color: Colors.black87,
-                          fontWeight: FontWeight.w500),
-                    ),
+                      margin: EdgeInsets.only(top: 30, left: 20, right: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            "Hotels",
+                            style: TextStyle(
+                                fontSize: 25,
+                                color: Colors.black87,
+                                fontWeight: FontWeight.w500),
+                          ),
+                          Text(
+                            "${hotels.length} hotels found",
+                            style: TextStyle(fontSize: 15, color: Colors
+                                .black45),
+                          ),
+                        ],
+                      ),
                   ),
                   SizedBox(
                     height: 15,
@@ -66,7 +80,7 @@ class _HotelPageState extends State<HotelPage> {
                       shrinkWrap: true,
                       scrollDirection: Axis.vertical,
                       physics: NeverScrollableScrollPhysics(),
-                      itemBuilder: (context, index){
+                      itemBuilder: (context, index) {
                         Map<String, dynamic> hotel = hotels[index];
                         return Column(
                           children: [

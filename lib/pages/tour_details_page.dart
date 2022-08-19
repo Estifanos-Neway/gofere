@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:gofere_travels/constants/colors.dart';
+import 'package:gofere_travels/pages/checkoutpage.dart';
+import 'package:gofere_travels/pages/indexpage.dart';
 import 'package:gofere_travels/pages/signin.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/uiw.dart';
@@ -94,9 +97,14 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                         size: 22,
                       )),
                 ],
-                title: Image.asset(
-                  "images/logo_small.png",
-                  scale: 22,
+                title: GestureDetector(
+                  onTap: (){
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => IndexPage()));
+                  },
+                  child: Image.asset(
+                    "images/logo_small.png",
+                    scale: 22,
+                  ),
                 )),
           ),
         ),
@@ -118,7 +126,7 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: 100,
+                        height: 110.h,
                       ),
                       Text(
                         name,
@@ -128,7 +136,7 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                             fontWeight: FontWeight.w600),
                       ),
                       SizedBox(
-                        height: 10,
+                        height: 8,
                       ),
                       Row(
                         children: [
@@ -168,12 +176,15 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                           SizedBox(
                             width: 5,
                           ),
-                          Text(
-                            location,
-                            style: TextStyle(
-                                fontSize: 15,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500),
+                          Flexible(
+                            child: Text(
+                              location,
+                              maxLines: 2,
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500),
+                            ),
                           ),
                           SizedBox(
                             width: 5,
@@ -222,10 +233,13 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
-                              location,
-                              style: TextStyle(
-                                  color: Colors.black54, fontSize: 17),
+                            Flexible(
+                              child: Text(
+                                location,
+                                maxLines: 2,
+                                style: TextStyle(
+                                    color: Colors.black54, fontSize: 17),
+                              ),
                             ),
                             Row(
                               children: [
@@ -818,6 +832,21 @@ class _TourDetailsPageState extends State<TourDetailsPage> {
                   )),
             ],
           ),
-        ));
+        ),
+      floatingActionButton: ElevatedButton(
+          onPressed: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context) => CheckoutPage(name, imageUrl, location)));
+      },
+        style: ElevatedButton.styleFrom(
+          primary: Color.fromARGB(255, 2, 120, 217),
+          onPrimary: Colors.white,
+          padding: EdgeInsets.all(20),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30)
+          )
+        ),
+        child: Text("Book"),
+      ),
+    );
   }
 }
